@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Goals;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,11 @@ class GoalsController extends Controller
      */
     public function index()
     {
-        //
+          //get all posts from Models
+          $goals = Goals::latest()->get();
+
+          //return view with data
+          return view('index', compact('goals'));
     }
 
     /**

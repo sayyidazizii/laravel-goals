@@ -14,5 +14,6 @@ class GoalsSeeder extends Seeder
     public function run()
     {
         //
+    
     }
 }

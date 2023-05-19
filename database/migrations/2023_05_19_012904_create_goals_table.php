@@ -17,11 +17,11 @@ class CreateGoalsTable extends Migration
             $table->id();
             $table->string('image');
             $table->string('goals');
-            $table->double('amount', 8, 2);
-            $table->double('current', 8, 2);
-            $table->double('balance', 8, 2);
+            $table->double('amount');
+            $table->double('current');
+            $table->double('balance');
             $table->date('duedate');
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 

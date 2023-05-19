@@ -9,5 +9,5 @@ class Goals extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image', 'goals', 'amount','current','balance','duedate','created_at'];
+    protected $fillable = ['image', 'goals', 'amount','current','balance','duedate'];
 }

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Home</title>
+        <title>Index</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,27 +18,28 @@
         </style>
         <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-            .center-wrapper {
-                display: flex;
-                justify-content: center;
-                align-items: center;/* Menyesuaikan tinggi viewport */
-                }
-        </style>
+
     </head>
     <body class="antialiased">
-            <h1 style="position:relative;
-            font-family: helvetica;
-            display: flex;
+        <h2 style="font-family: helvetica; display: flex;
             justify-content: center;
-            align-items: center;
-            height: 80vh; /* Adjust the height as needed */">NABUNG DULU</h1>
-            <div class="center-wrapper">
-            <a href="/index" class="btn btn-primary" style="position:relative;
-            font-family: helvetica;">Mulai</a>
+            align-items: center;margin-top:5%">Goals</h2>
+        <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach($goals as $goal)
+            <div class="col">
+                <div class="card h-100 shadow">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title  text-center">{{ $goal->goals }}</h5>
+                    <p class="card-text text-center">Amount : {{ $goal->amount }}</p>
+                    <p class="card-text text-center">Current : {{ $goal->current }}</p>
+                    <p class="card-text text-center">Balance : {{ $goal->balance }}</p>
+                </div>
+                </div>
             </div>
+        @endforeach    
+        </div>
+        </div>
     </body>
 </html>
