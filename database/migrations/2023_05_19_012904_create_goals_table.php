@@ -21,6 +21,7 @@ class CreateGoalsTable extends Migration
             $table->double('current');
             $table->double('balance');
             $table->date('duedate');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

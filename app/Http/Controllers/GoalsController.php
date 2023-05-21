@@ -15,12 +15,23 @@ class GoalsController extends Controller
     public function index()
     {
           //get all posts from Models
-          $goals = Goals::latest()->get();
+          //$goals = Goals::latest()->get();
 
           //return view with data
-          return view('index', compact('goals'));
+          return view('index');
     }
 
+
+
+    public function read()
+    {
+          //get all posts from Models
+          $data = Goals::all();
+          //return view with data
+          return view('read')->with([
+            'data' => $data
+          ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -29,6 +40,7 @@ class GoalsController extends Controller
     public function create()
     {
         //
+        return view('create');
     }
 
     /**
@@ -40,6 +52,13 @@ class GoalsController extends Controller
     public function store(Request $request)
     {
         //
+        $data['image'] = $request->image; 
+        $data['goals'] = $request->goals; 
+        $data['amount'] = $request->amount; 
+        $data['current'] = $request->current; 
+        $data['balance'] = $request->balance; 
+        $data['duedate'] = $request->duedate; 
+        Goals::insert($data);
     }
 
     /**
@@ -51,6 +70,10 @@ class GoalsController extends Controller
     public function show($id)
     {
         //
+        $data = Goals::findOrFail($id);
+        return view('edit')->with([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -62,6 +85,7 @@ class GoalsController extends Controller
     public function edit($id)
     {
         //
+        
     }
 
     /**
@@ -74,6 +98,15 @@ class GoalsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = Goals::findOrFail($id);
+        $data->id = $id; 
+        $data->image = $request->image; 
+        $data->goals = $request->goals; 
+        $data->amount = $request->amount; 
+        $data->current = $request->current; 
+        $data->balance = $request->balance; 
+        $data->duedate = $request->duedate;
+        $data->save();
     }
 
     /**
@@ -85,5 +118,7 @@ class GoalsController extends Controller
     public function destroy($id)
     {
         //
+        $data = Goals::findOrFail($id);
+        $data->delete();
     }
 }

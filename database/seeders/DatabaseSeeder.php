@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Goals::create([
-            'image' => 'John Doe',
+            'image' => 'kaki.jpg',
             'goals' => 'Operasi',
             'amount' => 4000000,
             'current' => 0,

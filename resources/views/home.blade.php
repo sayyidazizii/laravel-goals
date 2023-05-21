@@ -35,7 +35,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh; /* Adjust the height as needed */">NABUNG DULU</h1>
+            height: 80vh; /* Adjust the height as needed */"
+            class="fw-bold">NABUNG DULU</h1>
             <div class="center-wrapper">
             <a href="/index" class="btn btn-primary" style="position:relative;
             font-family: helvetica;">Mulai</a>
